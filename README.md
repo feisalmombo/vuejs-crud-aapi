@@ -1,29 +1,3 @@
-# vue-project
+# VUE JS CRUD USING LARAVEL API
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+This project is for CRUD opration in vue js using laravel api. where we are installing the vue, integrate bootstrap, axios, router, and create pages and then start wih CRUD operation like insert, fetch, edit & update, delete data using laravel api in vue js 3.
