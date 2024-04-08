@@ -49,8 +49,9 @@
         methods: {
             getStudents(){
 
-                axios.get('http://localhost:7809/api/students').then(res => {
-                    console.log(res)
+                axios.get('http://localhost:9090/api/students').then(res => {
+                    this.students = res.data.students
+                    console.log(this.students)
                 });
             }
         },
