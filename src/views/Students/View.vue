@@ -35,7 +35,7 @@
                                   Edit
                                 </RouterLink>
                                 <button type="button" class="btn btn-danger"> 
-                                    Delete
+                                  Delete
                                 </button>
                             </td>
                         </tr>
