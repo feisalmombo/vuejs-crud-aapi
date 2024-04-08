@@ -33,6 +33,7 @@
   </template>
 
   <script>
+   import axios from 'axios'
 
     export default {
         name: 'students',
@@ -42,8 +43,17 @@
             }
         },
         mounted(){
-            console.log('I am Here')
-        }
+            
+            this.getStudents();
+        },
+        methods: {
+            getStudents(){
+
+                axios.get('http://localhost:7809/api/students').then(res => {
+                    console.log(res)
+                });
+            }
+        },
     }
   </script>
   
