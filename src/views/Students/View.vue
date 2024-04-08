@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
         <div class="card">
             <div class="card-header">
                 <h4>
@@ -17,13 +17,27 @@
                             <th>Name</th>
                             <th>Course</th>
                             <th>Email</th>
+                            <th>Phone</th>
                             <th>Created At</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-
+                        <tr v-for="(student, index) in this.students" :key="index">
+                            <td>{{ student.id }}</td>
+                            <td>{{ student.name }}</td>
+                            <td>{{ student.course }}</td>
+                            <td>{{ student.email }}</td>
+                            <td>{{ student.phone }}</td>
+                            <td>{{ student.created_at }}</td>
+                            <td>
+                                <RouterLink to="/student/create" class="btn btn-success">
+                                  Edit
+                                </RouterLink>
+                                <button type="button" class="btn btn-danger"> 
+                                    Delete
+                                </button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -51,7 +65,7 @@
 
                 axios.get('http://localhost:9090/api/students').then(res => {
                     this.students = res.data.students
-                    console.log(this.students)
+                    // console.log(this.students)
                 });
             }
         },
