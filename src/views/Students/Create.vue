@@ -78,7 +78,7 @@ export default {
                     phone: ''
                 }
                 this.errorList = '';
-                
+
                 })
                 .catch(function (error) {
                 
@@ -87,9 +87,6 @@ export default {
                         if(error.response.status == 422) {
                             mythis.errorList = error.response.data.errors;
                         }
-                    // console.log(error.response.data);
-                    // console.log(error.response.status);
-                    // console.log(error.response.headers);
 
                     } else if (error.request) {
                        console.log(error.request);
