@@ -77,6 +77,8 @@ export default {
                     email: '',
                     phone: ''
                 }
+                this.errorList = '';
+                
                 })
                 .catch(function (error) {
                 
