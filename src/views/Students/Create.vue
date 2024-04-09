@@ -7,22 +7,22 @@
             <div class="card-body">
                 <div class="mb-3">
                     <label for="">Name</label>
-                    <input type="text" class="form-control" />
+                    <input type="text" v-model="model.student.name" class="form-control" />
                 </div>
 
                 <div class="mb-3">
                     <label for="">Course</label>
-                    <input type="text" class="form-control" />
+                    <input type="text" v-model="model.student.course" class="form-control" />
                 </div>
 
                 <div class="mb-3">
                     <label for="">Email</label>
-                    <input type="email" class="form-control" />
+                    <input type="email" v-model="model.student.email" class="form-control" />
                 </div>
 
                 <div class="mb-3">
                     <label for="">Phone</label>
-                    <input type="text" class="form-control" />
+                    <input type="text" v-model="model.student.phone" class="form-control" />
                 </div>
 
                 <div class="mb-3">
@@ -32,4 +32,23 @@
         </div>
     </div>
   </template>
+
+
+<script>
+export default {
+    name: 'studentCreate',
+    data(){
+        return {
+            model: {
+                student: {
+                    name: '',
+                    course: '',
+                    email: '',
+                    phone: ''
+                }
+            }
+        }
+    },
+}
+</script>
   
