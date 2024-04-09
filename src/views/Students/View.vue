@@ -22,7 +22,7 @@
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody v-if="this.students.length > 0">
                         <tr v-for="(student, index) in this.students" :key="index">
                             <td>{{ student.id }}</td>
                             <td>{{ student.name }}</td>
@@ -38,6 +38,11 @@
                                   Delete
                                 </button>
                             </td>
+                        </tr>
+                    </tbody>
+                    <tbody v-else>
+                        <tr>
+                            <td colspan="7">Loading...</td>
                         </tr>
                     </tbody>
                 </table>
