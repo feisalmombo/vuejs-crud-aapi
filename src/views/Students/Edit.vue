@@ -47,7 +47,7 @@
    import axios from 'axios'
 
 export default {
-    name: 'studentCreate',
+    name: 'studentEdit',
     data(){
         return {
             errorList: '',
@@ -60,6 +60,11 @@ export default {
                 }
             }
         }
+    },
+    mounted(){
+
+        console.log(this.$route.params.id);
+
     },
     methods: {
 
