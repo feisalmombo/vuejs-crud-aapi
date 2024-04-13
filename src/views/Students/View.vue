@@ -35,6 +35,7 @@
                                 <RouterLink :to="{ path: '/students/'+student.id+'/edit' }" class="btn btn-success">
                                   Edit
                                 </RouterLink>
+                                
                                 <button type="button" class="btn btn-danger"> 
                                   Delete
                                 </button>
