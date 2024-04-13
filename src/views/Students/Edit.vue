@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <button type="button" @click="saveStudent" class="btn btn-primary">Save</button>
+                    <button type="button" @click="updateStudent" class="btn btn-primary">Update</button>
                 </div>
             </div>
         </div>
@@ -50,6 +50,7 @@ export default {
     name: 'studentEdit',
     data(){
         return {
+            studentId: '',
             errorList: '',
             model: {
                 student: {
@@ -63,26 +64,48 @@ export default {
     },
     mounted(){
 
-        console.log(this.$route.params.id);
+        // console.log(this.$route.params.id);
+        this.studentId = this.$route.params.id;
+        this.getStudentData(this.$route.params.id);
 
     },
     methods: {
 
-        saveStudent(){
+        getStudentData(studentId) {
+
+            axios.get(`http://localhost:9090/api/students/${studentId}/edit`)
+            .then(res => {
+                // console.log(res);
+                console.log(res.data.student);
+
+                 // You can use below waay to call for a single of each column
+                // this.model.student.name = res.data.student.name; 
+
+                // This line fetch all data for student
+                this.model.student = res.data.student 
+            })  
+            .catch(function (error) {
+                
+                if (error.response) {
+
+                    if(error.response.status == 404) {
+
+                       alert(error.response.data.message);
+                    }
+
+                }
+            });
+        },
+
+        updateStudent(){
 
             var mythis = this;
-            axios.post('http://localhost:9090/api/students', this.model.student)
+            axios.put(`http://localhost:9090/api/students/${this.studentId}/edit`, this.model.student)
                 .then(res => {
                     
                     console.log(res.data)
                     alert(res.data.message);
 
-                    this.model.student = {
-                    name: '',
-                    course: '',
-                    email: '',
-                    phone: ''
-                }
                 this.errorList = '';
 
                 })
@@ -92,6 +115,13 @@ export default {
 
                         if(error.response.status == 422) {
                             mythis.errorList = error.response.data.errors;
+                        }
+
+
+                        if(error.response.status == 404) {
+
+                            alert(error.response.data.message);
+
                         }
 
                     } else if (error.request) {
