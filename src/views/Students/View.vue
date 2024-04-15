@@ -84,7 +84,7 @@
                 
                 if(confirm('Are you sure, you want to delete this data?')){
 
-                    // console.log(studentId);
+                    // console.log(studentId); This fetch the id for student
                     axios.delete(`http://localhost:9090/api/students/${studentId}/delete`)
                     .then(res => {
 
