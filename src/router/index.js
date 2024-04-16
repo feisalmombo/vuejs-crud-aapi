@@ -4,6 +4,8 @@ import StudentView from '../views/Students/View.vue'
 import StudentCreate from '../views/Students/Create.vue'
 import StudentEdit from '../views/Students/Edit.vue'
 import StudentShow from '../views/Students/Show.vue'
+import Register from '../views/Register/Register.vue'
+import Login from '../views/Login/Login.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
