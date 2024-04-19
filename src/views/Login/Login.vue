@@ -28,8 +28,8 @@
        return {
          result: {},
          student:{
-                    email: '',
-                    password: ''
+            email: '',
+            password: ''
          }
        }
      },
