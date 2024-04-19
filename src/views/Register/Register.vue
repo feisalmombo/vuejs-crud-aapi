@@ -1,5 +1,5 @@
 <template>
-
+<br>
  <div class="container">
   <div class="card" align="left">
     <div class="card-header">Register Form</div>
@@ -13,8 +13,9 @@
 
         <label>Password</label>
         <input type="password" v-model="student.password" name="password" id="password" required="required" class="form-control"/> 
-
+        <br>
         <input type="submit" value="Save" class="btn btn-success"> 
+        
       </form>
     </div>
 </div>
