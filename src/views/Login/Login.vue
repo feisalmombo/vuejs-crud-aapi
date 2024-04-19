@@ -41,14 +41,14 @@
      methods: {
             LoginData()
             {
-             axios.post("http://127.0.0.1:8000/api/login", this.student)
+             axios.post("http://127.0.0.1:9090/api/login", this.student)
              .then(
                ({data})=>{
                 console.log(data);
                 try {
                 if (data.status === true) {
                       alert("Login Successfully"); 
-                      this.$router.push({ name: 'HelloWorld' })
+                      this.$router.push({ name: 'HomeView' })
                       } else {
                       alert("Login failed")
                       }
