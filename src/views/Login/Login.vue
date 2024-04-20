@@ -48,7 +48,7 @@
                 try {
                 if (data.status === true) {
                       alert("Login Successfully"); 
-                      this.$router.push({ name: 'HomeView' })
+                      this.$router.push({ name: 'home' })
                       } else {
                       alert("Login failed")
                       }
