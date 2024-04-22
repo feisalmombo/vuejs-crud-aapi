@@ -6,6 +6,7 @@ import StudentEdit from '../views/Students/Edit.vue'
 import StudentShow from '../views/Students/Show.vue'
 import Register from '../views/Register/Register.vue'
 import Login from '../views/Login/Login.vue'
+import PageNotFound from '../components/PageNotFound.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -54,6 +55,11 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'NotFound',
+      component: PageNotFound
     }
   ]
 })
