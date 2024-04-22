@@ -1,8 +1,14 @@
 <template>
-    <div class="not-found">
-        <h1>404 Page</h1>
+    <br>
+     <div class="container">
+      <div class="card" align="center">
+        <div class="card-header">Page Not Found</div>
+        <div class="card-body"> 
+          <h1>404 Page</h1>
+        </div>
     </div>
-</template>
+     </div>
+      </template>
 
 
 <script>
